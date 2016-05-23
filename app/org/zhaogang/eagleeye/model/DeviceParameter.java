@@ -1,6 +1,7 @@
 package org.zhaogang.eagleeye.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Joy.wang on 16-5-23.
@@ -12,6 +13,14 @@ public class DeviceParameter  implements Serializable {
     private String      name;
     private boolean     enableMonitor;
     private boolean     enableControl;
+
+    //numerical value scope
+    private double      numValueMin;
+    private double      numValueMax;
+
+    //enumeration value-test list
+    private List<EnumParaValue> enumParaValues;
+
 
     public ParaType getType() {
         return type;
