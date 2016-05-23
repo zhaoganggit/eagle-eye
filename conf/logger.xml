@@ -1,0 +1,62 @@
+<configuration scan="true" debug="true">
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{ISO8601} %-5level [%thread] %X{sourceThread} %X{akkaSource} %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="logstash"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>debug</level>
+        </filter>
+        <file>logs/eagle-eye.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/eagle-eye.%d{yyyy-MM-dd}
+            </fileNamePattern>
+            <maxHistory>${logging.maxdays:-30}</maxHistory>
+        </rollingPolicy>
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <!-- provides the timestamp -->
+                <timestamp/>
+                <!-- provides the version -->
+                <version/>
+                <message/>
+                <loggerName/>
+                <threadName/>
+                <logLevel/>
+                <logLevelValue/>
+                <stackTrace/>
+                <mdc/>
+                <tags/>
+                <arguments/>
+                <logstashMarkers/>
+                <!--provides the fields in the configured pattern-->
+                <pattern>
+                    <!-- the pattern that defines what to include -->
+                    <pattern>
+                        {"appName":"eagle-eye"}
+                    </pattern>
+                </pattern>
+            </providers>
+        </encoder>
+    </appender>
+
+    <!--  third party packages -->
+    <logger name="play" level="DEBUG"/>
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="javax.management" level="WARN"/>
+    <logger name="com.wordnik.swagger" level="WARN"/>
+    <logger name="net.sf.ehcache" level="WARN"/>
+    <logger name="sun.net.www.protocol" level="WARN"/>
+    <!--  EB packages -->
+    <logger name="org.zhaogang.eagleeye" level="DEBUG"/>
+
+    <root level="DEBUG">
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="logstash"/>
+    </root>
+
+</configuration>
