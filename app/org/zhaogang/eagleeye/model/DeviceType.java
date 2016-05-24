@@ -1,6 +1,7 @@
 package org.zhaogang.eagleeye.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class DeviceType  implements Serializable {
     private String id;
     private String name;
     private Protocol protocol;
-    private List<DeviceParameter> deviceTypeParas;
+    private List<DeviceParameter> deviceTypeParas = new ArrayList<>();
 
     private Date createdDate;
     private Date lastModifiedDate;

@@ -8,18 +8,18 @@ import java.util.List;
  */
 public class DeviceParameter  implements Serializable {
 
-    private int         seq;
-    private ParaType    type;
-    private String      name;
-    private boolean     enableMonitor;
-    private boolean     enableControl;
+    protected int         seq;
+    protected ParaType    type;
+    protected String      name;
+    protected boolean     monitor;
+    protected boolean     control;
 
     //numerical value scope
-    private double      numValueMin;
-    private double      numValueMax;
+    protected double      doubleValueMin;
+    protected double      doubleValueMax;
 
     //enumeration value-test list
-    private List<EnumParaValue> enumParaValues;
+    protected List<EnumParaValue> enumParaValues;
 
 
     public ParaType getType() {
@@ -46,19 +46,43 @@ public class DeviceParameter  implements Serializable {
         this.name = name;
     }
 
-    public boolean isEnableMonitor() {
-        return enableMonitor;
+    public boolean isMonitor() {
+        return monitor;
     }
 
-    public void setEnableMonitor(boolean enableMonitor) {
-        this.enableMonitor = enableMonitor;
+    public void setMonitor(boolean monitor) {
+        this.monitor = monitor;
     }
 
-    public boolean isEnableControl() {
-        return enableControl;
+    public boolean isControl() {
+        return control;
     }
 
-    public void setEnableControl(boolean enableControl) {
-        this.enableControl = enableControl;
+    public void setControl(boolean control) {
+        this.control = control;
+    }
+
+    public double getDoubleValueMin() {
+        return doubleValueMin;
+    }
+
+    public void setDoubleValueMin(double doubleValueMin) {
+        this.doubleValueMin = doubleValueMin;
+    }
+
+    public double getDoubleValueMax() {
+        return doubleValueMax;
+    }
+
+    public void setDoubleValueMax(double doubleValueMax) {
+        this.doubleValueMax = doubleValueMax;
+    }
+
+    public List<EnumParaValue> getEnumParaValues() {
+        return enumParaValues;
+    }
+
+    public void setEnumParaValues(List<EnumParaValue> enumParaValues) {
+        this.enumParaValues = enumParaValues;
     }
 }

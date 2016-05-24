@@ -9,26 +9,22 @@ import java.util.Date;
  */
 public class Device implements Serializable{
 
-    private String  id;
-    private String  name;
-    private String  deviceTypeId;
-    private String  ip;
-    private int     port;
-    private boolean enableMonitor;
-    private Date    createdDate;
-    private Date    lastModifiedDate;
+    protected String  id;
+    protected String  no;
+    protected String  building;
+    protected String  floor;
+    protected String  roomNo;
+    protected String  deviceTypeId;
+    protected String  ip;
+    protected int     port;
+    protected boolean enableMonitor;
+    protected Date    createdDate;
+    protected Date    lastModifiedDate;
 
     //redundant fields
     @Transient
-    private DeviceType deviceType;
+    protected DeviceType deviceType;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getId() {
         return id;
@@ -36,6 +32,38 @@ public class Device implements Serializable{
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getNo() {
+        return no;
+    }
+
+    public void setNo(String no) {
+        this.no = no;
+    }
+
+    public String getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(String building) {
+        this.building = building;
+    }
+
+    public String getFloor() {
+        return floor;
+    }
+
+    public void setFloor(String floor) {
+        this.floor = floor;
+    }
+
+    public String getRoomNo() {
+        return roomNo;
+    }
+
+    public void setRoomNo(String roomNo) {
+        this.roomNo = roomNo;
     }
 
     public String getDeviceTypeId() {

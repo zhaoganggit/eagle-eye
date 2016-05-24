@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class EnumParaValue implements Serializable {
     private int     value;
-    private String  displayName;
+    private String  text;
 
     public int getValue() {
         return value;
@@ -17,11 +17,11 @@ public class EnumParaValue implements Serializable {
         this.value = value;
     }
 
-    public String getDisplayName() {
-        return displayName;
+    public String getText() {
+        return text;
     }
 
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
+    public void setText(String text) {
+        this.text = text;
     }
 }

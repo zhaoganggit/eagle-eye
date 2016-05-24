@@ -9,7 +9,6 @@ import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.event.LoggingBus;
 import akka.event.LoggingFilter;
-import com.everbridge.core.trace.utils.TraceMarker;
 import java.util.HashMap;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
