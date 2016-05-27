@@ -4,3 +4,5 @@
 
 
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+GET     /                           @org.zhaogang.eagleeye.controllers.Application.index()

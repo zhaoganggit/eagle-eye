@@ -1,14 +1,19 @@
-@layout("Hello Play Akka Angular WebSocket") {
-<div class="jumbotron" ng-controller="TimerController">
-  <div class="container">
-    <div class="col-sm-12">
-      <h1>
-        {{time | timer}}
-      </h1>
+@(title: String, msg: String)
+
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+
+    <title>@title</title>
+      <!-- Latest compiled and minified CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  </head>
+  <body>
+    <div>
+           @msg
     </div>
 
-    <button class="btn btn-primary col-sm-4 col-sm-offset-1" ng-click="start()">Start</button>
-    <button class="btn btn-default col-sm-4 col-sm-offset-1" ng-click="stop()">Stop</button>
-  </div>
-</div>
-}
+  </body>
+</html>
